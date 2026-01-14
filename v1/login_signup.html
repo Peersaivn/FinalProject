@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login_Signup</title>
+    <link rel="stylesheet" href="login_signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <div class="container ">
+        <div class="tab-buttons">
+        <button class="tab login-tab active">Login</button>
+        <button class="tab signup-tab active">Sign Up</button>
+    </div>
+        <div class="forms">
+            <div class="form-box login">
+                <h2>LOGIN</h2>
+                <div class="input-group">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+                <button>Login</button>
+            </div>
+        </div>
+        <div class="form-box signup">
+  <h2>SIGN UP</h2>
+  <div class="signup-columns">
+    <div class="signup-left">
+      <div class="input-group">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input type="text" name="f-name" placeholder="First Name">
+      </div>
+      <div class="input-group">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input type="text" name="l-name" placeholder="Last Name">
+      </div>
+      <div class="input-group">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" name="m-name" placeholder="Middle Name">
+        </div>
+      <div class="input-group">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <input type="email" name="email" placeholder="Email">
+      </div>
+    </div>
+    <div class="signup-right">
+      <div class="input-group">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+      </div>
+      <div class="input-group">
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        <input type="password" name="password" placeholder="Password">
+      </div>
+      <div class="input-group">
+        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+        <input type="password" name="confirm-password" placeholder="Confirm Password" >
+      </div>
+      <div class="input-group">
+        <i class="fa fa-home" aria-hidden="true"></i>
+        <textarea name="address" placeholder="Address"></textarea>
+      </div>
+    </div>
+  </div>
+
+            <button>Register</button>
+        </div>
+    </div>
+</body>
+<script src="login_signup.js"></script>
+</html>
