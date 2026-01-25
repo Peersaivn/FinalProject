@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <title>Dashboard</title>
+</head>
+<body>
+    <!--Sidebar-->
+    <aside class="sidebar collapsed">
+        <header class="sidebar-header">
+            <a href="#dashboard" class="header-logo" data-section="dashboard">
+                <img src="placeholder_logo.jpg" alt="PlaceholderLogo">
+            </a>
+            <button class="toggler sidebar-toggler">
+                <span class="material-icons-round">chevron_left</span>
+            </button>
+            <button class="toggler menu-toggler">
+                <span class="material-icons-round">menu</span>
+            </button>
+        </header>
+        <nav class="sidebar-nav">
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                    <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                        <span class="nav-icon material-icons-round">dashboard</span>
+                        <span class="nav-label">Dashboard</span>
+                    </a>
+                    <span class="nav-tooltip">Dashboard</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#profile" class="nav-link" data-section="profile">
+                        <span class="nav-icon material-icons-round">account_circle</span>
+                        <span class="nav-label">Account Profile</span>
+                    </a>
+                    <span class="nav-tooltip">Account Profile</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#notifications" class="nav-link" data-section="notifications">
+                        <span class="nav-icon material-icons-round">notifications</span>
+                        <span class="nav-label">Notifications</span>
+                    </a>
+                    <span class="nav-tooltip">Notifications</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#calendar" class="nav-link" data-section="calendar">
+                        <span class="nav-icon material-symbols-rounded">calendar_month</span>
+                        <span class="nav-label">Calendar</span>
+                    </a>
+                    <span class="nav-tooltip">Calendar</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#basket" class="nav-link" data-section="basket">
+                        <span class="nav-icon material-icons-round">shopping_basket</span>
+                        <span class="nav-label">Laundry Basket</span>
+                    </a>
+                    <span class="nav-tooltip">Laundry Basket</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link" data-section="services">
+                        <span class="nav-icon material-symbols-rounded">apps</span>
+                        <span class="nav-label">Services</span>
+                    </a>
+                    <span class="nav-tooltip">Services</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#billings" class="nav-link" data-section="billings">
+                        <span class="nav-icon material-icons-round">receipt_long</span>
+                        <span class="nav-label">Billings</span>
+                    </a>
+                    <span class="nav-tooltip">Billings</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#rewards" class="nav-link" data-section="rewards">
+                        <span class="nav-icon material-icons-round">loyalty</span>
+                        <span class="nav-label">Loyalty Rewards</span>
+                    </a>
+                    <span class="nav-tooltip">Loyalty Rewards</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#settings" class="nav-link" data-section="settings">
+                        <span class="nav-icon material-icons-round">settings</span>
+                        <span class="nav-label">Settings</span>
+                    </a>
+                    <span class="nav-tooltip">Settings</span>
+                </li>
+            </ul>
+            <ul class="nav-list secondary-nav">
+                <li class="nav-item">
+                    <a href="#switch" class="nav-link" data-section="switch">
+                        <span class="nav-icon material-icons-round">switch_account</span>
+                        <span class="nav-label">Switch Account</span>
+                    </a>
+                    <span class="nav-tooltip">Switch Account</span>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon material-icons-round">logout</span>
+                        <span class="nav-label">Logout</span>
+                    </a>
+                    <span class="nav-tooltip">Logout</span>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!--Sidebar End-->
+    <!--Dashboard Content-->
+    <div class="dashboard-content">
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="content-section" style="display: block;">
+            <div class="box greetings">
+                <h1>Hey, Placeholder!</h1>
+                <p>How can we help you today?</p>
+                <div class="location">
+                    <span class="material-symbols-rounded location-icon">location_on</span>
+                    <p class="selected-text">Specific Address #0
+                        City, Country Here #0
+                    </p>
+                    <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span>
+                </div>
+                <ul>
+                    <!--Placeholder Options-->
+                    <li class="options">
+                        <span class="option-address"><p>Specific Address #1<br>
+                            City, Country Here #1
+                        </p></span>
+                    </li>
+                    <li class="options">
+                        <span class="option-address"><p>Specific Address #2<br>
+                            City, Country Here #2
+                        </p></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <!--Laundry Basket Info-->
+            <div class="box laundry-basket">
+                <div class="laundry-date">
+                    <h2><span class="material-symbols-rounded">event</span>Laundry Basket</h2>
+                    <div class="pickup-deliverytime">
+                        <ul>
+                            <li><strong>Due Time: </strong>Saturday, January 24</li>
+                            <li><strong>Pick-Up/Delivery Time: </strong>8:00 AM-12:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Services Info-->
+            <div class="box services">
+                <h2><span class="nav-icon material-symbols-rounded">apps</span>Services</h2>
+                <div class="service-items">
+                   <div class="service-item">
+                        <h2><span class="material-symbols-rounded">laundry</span>Laundry</h2>
+                    </div>
+                    <div class="service-item">
+                        <h2><span class="material-icons-round">iron</span>Iron</h2>
+                    </div>
+                    <div class="service-item">
+                        <h2><span class="material-icons-round">dry_cleaning</span>Dry Cleaning</h2>
+                    </div>
+                    <div class="service-item">
+                        <h2><span class="material-symbols-rounded">wash</span>Wash</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="box promo-banner">
+                <h3>We value your loyalty!</h3>
+                <p>Join now and save up to $12 a year!</p>
+                <button>Start Saving Today</button>
+            </div>
+            </div>
+        </div>
+        <!-- Profile Section -->
+        <div id="profile" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Account Profile</h2>
+                <p>Your profile information goes here.</p>
+            </div>
+        </div>
+        <!-- Notifications Section -->
+        <div id="notifications" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Notifications</h2>
+                <p>Your notifications go here.</p>
+            </div>
+        </div>
+        <!-- Calendar Section -->
+        <div id="calendar" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Calendar</h2>
+                <p>Your calendar information goes here.</p>
+            </div>
+        </div>
+        <!-- Laundry Basket Section -->
+        <div id="basket" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Laundry Basket</h2>
+                <p>Your laundry basket details go here.</p>
+            </div>
+        </div>
+        <!-- Services Section -->
+        <div id="services" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Services</h2>
+                <p>Your services information goes here.</p>
+            </div>
+        </div>
+        <!-- Billings Section -->
+        <div id="billings" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Billings</h2>
+                <p>Your billing information goes here.</p>
+            </div>
+        </div>
+        <!-- Loyalty Rewards Section -->
+        <div id="rewards" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Loyalty Rewards</h2>
+                <p>Your loyalty rewards go here.</p>
+            </div>
+        </div>
+        <!-- Settings Section -->
+        <div id="settings" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Settings</h2>
+                <p>Your settings go here.</p>
+            </div>
+        </div>
+        <!-- Switch Account Section -->
+        <div id="switch" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Switch Account</h2>
+                <p>Switch to another account here.</p>
+            </div>
+        </div>
+    </div>
+    <!--Dashboard Content End-->
+    <script src="dashboard.js"></script>
+</body>
+</html>
