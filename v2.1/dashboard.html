@@ -74,14 +74,14 @@
                     <span class="nav-tooltip">Billings</span>
                 </li>
                 <li class="nav-item">
-                    <a href="#rewards" class="nav-link" data-section="rewards">
+                    <a href="#rewards" class="nav-link" data-section="reward">
                         <span class="nav-icon material-icons-round">loyalty</span>
                         <span class="nav-label">Loyalty Rewards</span>
                     </a>
                     <span class="nav-tooltip">Loyalty Rewards</span>
                 </li>
                 <li class="nav-item">
-                    <a href="#settings" class="nav-link" data-section="settings">
+                    <a href="#settings" class="nav-link" data-section="setting">
                         <span class="nav-icon material-icons-round">settings</span>
                         <span class="nav-label">Settings</span>
                     </a>
@@ -90,7 +90,7 @@
             </ul>
             <ul class="nav-list secondary-nav">
                 <li class="nav-item">
-                    <a href="#switch" class="nav-link" data-section="switch">
+                    <a href="index.html" class="nav-link">
                         <span class="nav-icon material-icons-round">switch_account</span>
                         <span class="nav-label">Switch Account</span>
                     </a>
@@ -151,24 +151,24 @@
             <!--Services Info-->
             <div class="box services">
                 <h2><span class="nav-icon material-symbols-rounded">apps</span>Services</h2>
-                <div class="service-items">
-                   <div class="service-item">
+                <div class="serv-items">
+                   <div class="serv-item">
                         <h2><span class="material-symbols-rounded">laundry</span>Laundry</h2>
                     </div>
-                    <div class="service-item">
-                        <h2><span class="material-icons-round">iron</span>Iron</h2>
+                    <div class="serv-item">
+                        <h2><span class="material-icons-round">iron</span>Iron/Press</h2>
                     </div>
-                    <div class="service-item">
+                    <div class="serv-item">
                         <h2><span class="material-icons-round">dry_cleaning</span>Dry Cleaning</h2>
                     </div>
-                    <div class="service-item">
-                        <h2><span class="material-symbols-rounded">wash</span>Wash</h2>
+                    <div class="serv-item">
+                        <h2><span class="material-symbols-rounded">wash</span>Specialty Fabric Cleaning</h2>
                     </div>
                 </div>
             </div>
             <div class="box promo-banner">
                 <h3>We value your loyalty!</h3>
-                <p>Join now and save up to $12 a year!</p>
+                <p>Join now and save up to ₱50 a year!</p>
                 <button>Start Saving Today</button>
             </div>
             </div>
@@ -196,48 +196,255 @@
         </div>
         <!-- Laundry Basket Section -->
         <div id="basket" class="content-section" style="display: none;">
-            <div class="box">
+            <div class="box laundry-section">
                 <h2>Laundry Basket</h2>
-                <p>Your laundry basket details go here.</p>
+                <div class="basket-layout">
+                    <aside class="search-bar">
+                        <input type="text" placeholder="Search laundry history...">
+                    </aside>
+                    <div class="current-laundry">
+                        <h3>Current Laundry</h3>
+                        <ul>
+                            <li>Washing - Placeholder Item</li>
+                            <li>Ironing - Placeholder Item</li>
+                            <li>Dry Cleaning - Placeholder Item</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="laundry-history">
+                    <h3>Laundry History</h3>
+                    <ul>
+                        <li onclick="openHistoryPopup()">History Item #001</li>
+                        <li onclick="openHistoryPopup()">History Item #002</li>
+                        <li onclick="openHistoryPopup()">History Item #003</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- Services Section -->
         <div id="services" class="content-section" style="display: none;">
-            <div class="box">
+            <div class="box service-section">
                 <h2>Services</h2>
-                <p>Your services information goes here.</p>
+                <div class="service-list">
+                    <div class="service" onclick="openServicePopup('Laundry')">
+                        <img src="Laundry.jpg" alt="Laundry Pic">
+                        <h3>Laundry</h3>
+                        <p>Basic washing service.</p>
+                    </div>
+                    <div class="service" onclick="openServicePopup('Dry Cleaning')">
+                        <img src="Dry Cleaning.jpg" alt="Dry Cleaning Pic">
+                        <h3>Dry Cleaning</h3>
+                        <p>Gentle cleaning for delicate fabrics.</p>
+                    </div>
+                    <div class="service" onclick="openServicePopup('Iron/Press')">
+                        <img src="Iron_Press.jpg" alt="Iron Pic">
+                        <h3>Iron/Press</h3>
+                        <p>Professional pressing for neat clothes.</p>
+                    </div>
+                    <div class="service" onclick="openServicePopup('Special Fabric Cleaning')">
+                        <img src="Special_Fabric_Cleaning.jpg" alt="Fabric Pic">
+                        <h3>Special Fabric Cleaning</h3>
+                        <p>Special care for unique fabrics.</p>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Billings Section -->
         <div id="billings" class="content-section" style="display: none;">
-            <div class="box">
+            <div class="box billings">
                 <h2>Billings</h2>
-                <p>Your billing information goes here.</p>
+                <!-- On Review (Online Payment) -->
+                <div class="billing-group">
+                <h3>On Review</h3>
+                <ul>
+                    <li onclick="openBillingPopup('BILL 0006')">1 | BILL 0006</li>
+                    <li onclick="openBillingPopup('BILL 0005')">2 | BILL 0005</li>
+                </ul>
+                </div>
+                <!-- Pending (Onsite Payment) -->
+                <div class="billing-group">
+                <h3>Pending</h3>
+                <ul>
+                    <li onclick="openBillingPopup('BILL 0004')">1 | BILL 0004</li>
+                </ul>
+                </div>
+                <!-- Billing History -->
+                <div class="billing-group">
+                <h3>Billing History</h3>
+                    <ul>
+                        <li onclick="openBillingPopup('BILL 0003')">1 | BILL 0003</li>
+                        <li onclick="openBillingPopup('BILL 0002')">2 | BILL 0002</li>
+                        <li onclick="openBillingPopup('BILL 0001')">3 | BILL 0001</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- Loyalty Rewards Section -->
-        <div id="rewards" class="content-section" style="display: none;">
-            <div class="box">
+        <div id="reward" class="content-section" style="display: none;">
+            <div class="box rewards">
                 <h2>Loyalty Rewards</h2>
                 <p>Your loyalty rewards go here.</p>
             </div>
         </div>
         <!-- Settings Section -->
-        <div id="settings" class="content-section" style="display: none;">
-            <div class="box">
+        <div id="setting" class="content-section" style="display: none;">
+            <div class="box settings">
                 <h2>Settings</h2>
                 <p>Your settings go here.</p>
             </div>
         </div>
-        <!-- Switch Account Section -->
-        <div id="switch" class="content-section" style="display: none;">
-            <div class="box">
-                <h2>Switch Account</h2>
-                <p>Switch to another account here.</p>
+    </div>
+    <!--Laundry History Popup--> 
+    <div id="history-popup" class="popup hidden">
+        <div class="popup-content">
+            <h3>Laundry History Details</h3>
+            <p>Service Used: Placeholder</p>
+            <p>Clothes: Placeholder</p>
+            <p>Payment: Placeholder</p>
+            <p>ID Number: Placeholder</p>
+            <p>Payment Method: Placeholder</p>
+            <p>Amount: Placeholder</p>
+            <button onclick="closeHistoryPopup()">Close</button>
+        </div>
+    </div>
+    <!-- Service Popup -->
+    <div id="service-popup" class="popup hidden">
+        <div class="popup-content service-popup-content">
+            <h3>Services</h3>
+            <!-- Active services list -->
+            <div class="active-services" id="active-services">
+            <!-- Services will be added dynamically -->
+            </div>
+            <!-- Add Service button -->
+            <button class="add-service-btn" onclick="openAddServicePopup()">+ Add Service</button>
+            <!-- Next button goes to Clothes Popup -->
+            <button class="next-btn" onclick="goToClothesPopup()">Next</button>
+        </div>
+    </div>
+    <!-- Add Service Popup -->
+    <div id="add-service-popup" class="popup hidden">
+        <div class="popup-content add-service-content">
+            <h3>Select a Service</h3>
+            <div class="service-options">
+                <div class="service-option" onclick="confirmServiceSelection('Laundry')">Laundry</div>
+                <div class="service-option" onclick="confirmServiceSelection('Iron/Press')">Iron/Press</div>
+                <div class="service-option" onclick="confirmServiceSelection('Special Fabric Cleaning')">Special Fabric Cleaning</div>
+                <div class="service-option" onclick="confirmServiceSelection('Dry Cleaning')">Dry Cleaning</div>
+                </div>
+                <div class="popup-actions">
+                <button onclick="closeAddServicePopup()">Cancel</button>
             </div>
         </div>
     </div>
-    <!--Dashboard Content End-->
+    <!-- Clothes Popup -->
+    <div id="clothes-popup" class="popup hidden">
+        <div class="popup-content clothes-popup-content">
+            <h3>Your Laundry Basket</h3>
+            <!-- Add Clothes button -->
+            <button class="add-clothes-btn" onclick="openClothesSelectionPopup()">+ Add Clothes</button>
+            <!-- Selected clothes list -->
+                <div class="clothes-list" id="clothes-list">
+                <!-- Clothing + fabric items will be added here -->
+                </div>
+            <!-- Detergent choice -->
+            <h4>Detergent</h4>
+            <select id="detergent-choice">
+                <option>Placeholder Detergent A</option>
+                <option>Placeholder Detergent B</option>
+                <option>Bring Own Detergent</option>
+            </select>
+            <!-- Special Instructions -->
+            <h4>Special Instructions</h4>
+            <textarea id="special-instructions" placeholder="Leave instructions here..."></textarea>
+            <!-- Price summary -->
+            <p id="total-price">Total Price: ₱ Placeholder</p>
+            <!-- Next button goes to Transaction Popup -->
+            <button class="next-btn" onclick="goToTransaction()">Next</button>
+        </div>
+    </div>
+    <!-- Add Clothes Popup -->
+    <div id="clothes-selection-popup" class="popup hidden">
+        <div class="popup-content clothes-selection-content">
+            <h3>Add Clothing Item</h3>
+            <!-- Clothing type -->
+            <label for="clothing-type">Clothing:</label>
+                <select id="clothing-type">
+                <option value="Shirt">Shirt</option>
+                <option value="Blouse">Blouse</option>
+                <option value="Pants">Pants</option>
+                <option value="Sweater">Sweater</option>
+                <option value="Dress">Dress</option>
+                <option value="Shorts">Shorts</option>
+            </select>
+            <!-- Fabric type -->
+            <label for="fabric-type">Fabric:</label>
+            <select id="fabric-type">
+                <option value="Cotton">Cotton</option>
+                <option value="Silk">Silk</option>
+                <option value="Denim">Denim</option>
+                <option value="Polyester">Polyester</option>
+                <option value="Regular Fabric">Regular Fabric</option>
+            </select>
+            <!-- Action buttons -->
+            <div class="popup-actions">
+                <button onclick="confirmClothesSelection()">Add</button>
+                <button onclick="closeClothesSelectionPopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- Transaction Popup -->
+    <div id="transaction-popup" class="popup hidden">
+        <div class="popup-content transaction-popup-content">
+            <h3>Transaction Summary</h3>
+            <!-- Summary of services, clothes, detergent, instructions -->
+            <div id="transaction-summary">
+            <!-- Filled dynamically -->
+            </div>
+            <!-- Placeholder total -->
+            <p id="transaction-total">Total Price: ₱ Placeholder</p>
+            <!-- Transaction type selection -->
+            <h4>Transaction Type</h4>
+            <div class="transaction-type">
+                <label>
+                    <input type="radio" name="transaction-type" value="Online" checked onchange="toggleTransactionType()">
+                    Online
+                </label>
+                <label>
+                    <input type="radio" name="transaction-type" value="Onsite" onchange="toggleTransactionType()">
+                    Onsite
+            </label>
+            </div>
+            <!-- Online payment section -->
+            <div id="online-payment-section">
+                <h4>GCash Payment</h4>
+                <p>Scan the QR code below to pay:</p>
+                <div class="qr-code">
+                    <!-- Replace with actual QR image -->
+                    <img src="qr_temporary.png" alt="GCash QR Code" width="200">
+                </div>
+                <label for="payment-screenshot">Upload Screenshot Proof:</label>
+                <input type="file" id="payment-screenshot" accept="image/*">
+            </div>
+            <!-- Confirm / Cancel -->
+            <div class="popup-actions">
+                <button class="confirm-btn" onclick="confirmTransaction()">Confirm</button>
+                <button class="cancel-btn" onclick="closeTransactionPopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- Bill Details Popup -->
+    <div id="bill-popup" class="popup hidden">
+        <div class="popup-content bill-popup-content">
+            <h3 id="bill-title">Bill Details</h3>
+            <div id="bill-details">
+                <!-- Filled dynamically -->
+            </div>
+            <div class="popup-actions">
+                <button class="cancel-btn" onclick="closeBillPopup()">Close</button>
+            </div>
+        </div>
+    </div>
+        <!--Dashboard Content End-->
     <script src="dashboard.js"></script>
 </body>
 </html>
