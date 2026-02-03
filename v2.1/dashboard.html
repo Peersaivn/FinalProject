@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="dashboard.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <title>Dashboard</title>
 </head>
 <body>
@@ -175,9 +176,54 @@
         </div>
         <!-- Profile Section -->
         <div id="profile" class="content-section" style="display: none;">
-            <div class="box">
+            <div class="box acc-profile">
                 <h2>Account Profile</h2>
-                <p>Your profile information goes here.</p>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Full Name</span>
+                        <button class="edit-btn" data-field="fullname"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-row">
+                        <div class="profile-field"><label>Last Name:</label><span id="lastName">Doe</span></div>
+                        <div class="profile-field"><label>First Name:</label><span id="firstName">John</span></div>
+                        <div class="profile-field"><label>Middle Name:</label><span id="middleName">A.</span></div>
+                    </div>
+                </div>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Gender</span>
+                        <button class="edit-btn" data-field="gender"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-single"><span id="gender">Male</span></div>
+                </div>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Date of Birth</span>
+                        <button class="edit-btn" data-field="birthday"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-row">
+                        <div class="profile-field"><label>Month:</label><span id="birthMonth">02</span></div>
+                        <div class="profile-field"><label>Day:</label><span id="birthDay">03</span></div>
+                        <div class="profile-field"><label>Year:</label><span id="birthYear">1990</span></div>
+                    </div>
+                </div>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Contact Information</span>
+                        <button class="edit-btn " data-field="contact"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-row">
+                        <div class="profile-field"><label>Phone No:</label><span id="telephone">+63 912 345 6789</span></div>
+                        <div class="profile-field"><label>Email:</label><span id="email">john.doe@email.com</span></div>
+                    </div>
+                </div>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Address</span>
+                        <button class="edit-location-btn" data-field="location"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-single"><span id="location">Quezon City</span></div>
+                </div>
             </div>
         </div>
         <!-- Notifications Section -->
@@ -189,9 +235,35 @@
         </div>
         <!-- Calendar Section -->
         <div id="calendar" class="content-section" style="display: none;">
-            <div class="box">
-                <h2>Calendar</h2>
-                <p>Your calendar information goes here.</p>
+            <div class="box calendar">
+                <div class="left">
+                    <div class="calen">
+                        <div class="month">
+                            <span class="material-symbols-rounded">chevron_left</span>
+                            <div class="date">February 2026</div>
+                            <span class="material-symbols-rounded">chevron_right</span>
+                        </div>
+                        <div class="weekdays">
+                            <div>SUN</div>
+                            <div>MON</div>
+                            <div>TUE</div>
+                            <div>WED</div>
+                            <div>THURS</div>
+                            <div>FRI</div>
+                            <div>SAT</div>
+                        </div>
+                        <div class="days">
+                            <!--Days will go here-->
+                        </div>
+                        <div class="goto-today">
+                            <div class="goto">
+                                <input type="text" placeholder="mm/yyyy" class="date-input">
+                                <button class="goto-btn">GO</button>
+                            </div>
+                            <button class="today-btn">TODAY</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Laundry Basket Section -->
@@ -359,7 +431,8 @@
             <!-- Price summary -->
             <p id="total-price">Total Price: ₱ Placeholder</p>
             <!-- Next button goes to Transaction Popup -->
-            <button class="next-btn" onclick="goToTransaction()">Next</button>
+            <button class="next-btn" onclick="goToSchedulePopup()">Next</button>
+            <button class="back-btn" onclick="backToServicePopup()">Back</button>
         </div>
     </div>
     <!-- Add Clothes Popup -->
@@ -390,6 +463,33 @@
                 <button onclick="confirmClothesSelection()">Add</button>
                 <button onclick="closeClothesSelectionPopup()">Cancel</button>
             </div>
+        </div>
+    </div>
+    <!-- Schedule & Delivery Popup -->
+    <div id="schedule-delivery-popup" class="popup hidden">
+        <div class="popup-content schedule-popup-content">
+            <h3>Select Schedule</h3>
+            <!-- Schedule options -->
+             <div class="schedule-options">
+                <button onclick="selectSchedule('9:00 AM')">9:00 AM</button>
+                <button onclick="selectSchedule('11:30 AM')">11:30 AM</button>
+                <button onclick="selectSchedule('2:00 PM')">2:00 PM</button>
+                <button onclick="selectSchedule('4:30 PM')">4:30 PM</button>
+                <button onclick="selectSchedule('7:00 PM')">7:00 PM</button>
+             </div>
+             <!--Info Text-->
+             <h2 class="schedule-note">
+                <span class="material-symbols-rounded">info</span>
+                Machine will be assigned by staff when you arrive at the laundry shop.
+             </h2>
+             <!--Delivery Method-->
+             <h3>Select Delivery Method</h3>
+             <div class="delivery-options">
+                <button onclick="selectDelivery('Drop Off')">Drop Off</button>
+                <button onclick="selectDelivery('Pick Up')">Pick Up</button>
+             </div>
+             <button class="next-btn" onclick="goToTransaction()">Next</button>
+             <button class="back-btn" onclick="backToClothesPopup()">Back</button>
         </div>
     </div>
     <!-- Transaction Popup -->
@@ -427,6 +527,7 @@
             </div>
             <!-- Confirm / Cancel -->
             <div class="popup-actions">
+                <button class="back-btn" onclick="backToSchedulePopup()">Back</button>
                 <button class="confirm-btn" onclick="confirmTransaction()">Confirm</button>
                 <button class="cancel-btn" onclick="closeTransactionPopup()">Cancel</button>
             </div>
@@ -444,7 +545,19 @@
             </div>
         </div>
     </div>
+    <!-- Edit Popup -->
+    <div id="edit-popup" class="popup hidden">
+        <div class="popup-content edit-popup-content">
+            <h3 id="popupTitle">Edit Field</h3>
+            <div id="popupBody"></div>
+            <div class="edit-popup-actions">
+                <button id="saveEdit">Save</button>
+                <button id="cancelEdit">Cancel</button>
+            </div>
+        </div>
+    </div>
         <!--Dashboard Content End-->
     <script src="dashboard.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </body>
 </html>
