@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Dashboard</title>
+</head>
+<body>
+    <!--Sidebar-->
+    <aside class="sidebar collapsed">
+        <header class="sidebar-header">
+            <a href="#dashboard" class="header-logo" data-section="dashboard">
+                <img src="placeholder_logo.jpg" alt="PlaceholderLogo">
+            </a>
+            <button class="toggler sidebar-toggler">
+                <span class="material-icons-round">chevron_left</span>
+            </button>
+            <button class="toggler menu-toggler">
+                <span class="material-icons-round">menu</span>
+            </button>
+        </header>
+        <nav class="sidebar-nav">
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                    <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                        <span class="nav-icon material-icons-round">dashboard</span>
+                        <span class="nav-label">Dashboard</span>
+                    </a>
+                    <span class="nav-tooltip">Dashboard</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#profile" class="nav-link" data-section="profile">
+                        <span class="nav-icon material-icons-round">account_circle</span>
+                        <span class="nav-label">Account Profile</span>
+                    </a>
+                    <span class="nav-tooltip">Account Profile</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#notifications" class="nav-link" data-section="notifications">
+                        <span class="nav-icon material-icons-round">notifications</span>
+                        <span class="nav-label">Notifications</span>
+                    </a>
+                    <span class="nav-tooltip">Notifications</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#calendar" class="nav-link" data-section="calendar">
+                        <span class="nav-icon material-symbols-rounded">calendar_month</span>
+                        <span class="nav-label">Calendar</span>
+                    </a>
+                    <span class="nav-tooltip">Calendar</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#basket" class="nav-link" data-section="basket">
+                        <span class="nav-icon material-icons-round">shopping_basket</span>
+                        <span class="nav-label">Laundry Basket</span>
+                    </a>
+                    <span class="nav-tooltip">Laundry Basket</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link" data-section="services">
+                        <span class="nav-icon material-symbols-rounded">apps</span>
+                        <span class="nav-label">Services</span>
+                    </a>
+                    <span class="nav-tooltip">Services</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#billings" class="nav-link" data-section="billings">
+                        <span class="nav-icon material-icons-round">receipt_long</span>
+                        <span class="nav-label">Billings</span>
+                    </a>
+                    <span class="nav-tooltip">Billings</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#rewards" class="nav-link" data-section="reward">
+                        <span class="nav-icon material-icons-round">loyalty</span>
+                        <span class="nav-label">Loyalty Rewards</span>
+                    </a>
+                    <span class="nav-tooltip">Loyalty Rewards</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#settings" class="nav-link" data-section="setting">
+                        <span class="nav-icon material-icons-round">settings</span>
+                        <span class="nav-label">Settings</span>
+                    </a>
+                    <span class="nav-tooltip">Settings</span>
+                </li>
+            </ul>
+            <ul class="nav-list secondary-nav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon material-icons-round">switch_account</span>
+                        <span class="nav-label">Switch Account</span>
+                    </a>
+                    <span class="nav-tooltip">Switch Account</span>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-icon material-icons-round">logout</span>
+                        <span class="nav-label">Logout</span>
+                    </a>
+                    <span class="nav-tooltip">Logout</span>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!--Sidebar End-->
+    <!--Dashboard Content-->
+    <div class="dashboard-content">
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="content-section" style="display: block;">
+            <div class="box greetings">
+                <h1>Hey, Placeholder!</h1>
+                <p>How can we help you today?</p>
+                <div class="location">
+                    <span class="material-symbols-rounded location-icon">location_on</span>
+                    <p class="selected-text">Specific Address #0
+                        City, Country Here #0
+                    </p>
+                    <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span>
+                </div>
+                <ul>
+                    <!--Placeholder Options-->
+                    <li class="options">
+                        <span class="option-address"><p>Specific Address #1<br>
+                            City, Country Here #1
+                        </p></span>
+                    </li>
+                    <li class="options">
+                        <span class="option-address"><p>Specific Address #2<br>
+                            City, Country Here #2
+                        </p></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <!--Laundry Basket Info-->
+            <div class="box laundry-basket">
+                <div class="laundry-date">
+                    <h2><span class="material-symbols-rounded">event</span>Laundry Basket</h2>
+                    <div class="pickup-deliverytime">
+                        <ul>
+                            <li><strong>Due Time: </strong>Saturday, January 24</li>
+                            <li><strong>Pick-Up/Delivery Time: </strong>8:00 AM-12:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Services Info-->
+            <div class="box services">
+                <h2><span class="nav-icon material-symbols-rounded">apps</span>Services</h2>
+                <div class="serv-items">
+                   <div class="serv-item">
+                        <h2><span class="material-symbols-rounded">laundry</span>Laundry</h2>
+                    </div>
+                    <div class="serv-item">
+                        <h2><span class="material-icons-round">iron</span>Iron/Press</h2>
+                    </div>
+                    <div class="serv-item">
+                        <h2><span class="material-icons-round">dry_cleaning</span>Dry Cleaning</h2>
+                    </div>
+                    <div class="serv-item">
+                        <h2><span class="material-symbols-rounded">wash</span>Specialty Fabric Cleaning</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="box promo-banner">
+                <h3>We value your loyalty!</h3>
+                <p>Join now and save up to ₱50 a year!</p>
+                <button>Start Saving Today</button>
+            </div>
+            </div>
+        </div>
+        <!-- Profile Section -->
+        <div id="profile" class="content-section" style="display: none;">
+            <div class="box acc-profile">
+                <h2>Account Profile</h2>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Full Name</span>
+                        <button class="edit-btn" data-field="fullname"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-row">
+                        <div class="profile-field"><label>Last Name:</label><span id="lastName">Doe</span></div>
+                        <div class="profile-field"><label>First Name:</label><span id="firstName">John</span></div>
+                        <div class="profile-field"><label>Middle Name:</label><span id="middleName">A.</span></div>
+                    </div>
+                </div>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Gender</span>
+                        <button class="edit-btn" data-field="gender"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-single"><span id="gender">Male</span></div>
+                </div>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Date of Birth</span>
+                        <button class="edit-btn" data-field="birthday"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-row">
+                        <div class="profile-field"><label>Month:</label><span id="birthMonth">02</span></div>
+                        <div class="profile-field"><label>Day:</label><span id="birthDay">03</span></div>
+                        <div class="profile-field"><label>Year:</label><span id="birthYear">1990</span></div>
+                    </div>
+                </div>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Contact Information</span>
+                        <button class="edit-btn " data-field="contact"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-row">
+                        <div class="profile-field"><label>Phone No:</label><span id="telephone">+63 912 345 6789</span></div>
+                        <div class="profile-field"><label>Email:</label><span id="email">john.doe@email.com</span></div>
+                    </div>
+                </div>
+                <div class="acc-section">
+                    <div class="sec-head">
+                        <span>Address</span>
+                        <button class="edit-location-btn" data-field="location"><span class="material-symbols-rounded">edit_square</span></button>
+                    </div>
+                    <div class="profile-single"><span id="location">Quezon City</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- Notifications Section -->
+        <div id="notifications" class="content-section" style="display: none;">
+            <div class="box">
+                <h2>Notifications</h2>
+                <p>Your notifications go here.</p>
+            </div>
+        </div>
+        <!-- Calendar Section -->
+        <div id="calendar" class="content-section" style="display: none;">
+            <div class="box calendar">
+                <div class="left">
+                    <div class="calen">
+                        <div class="month">
+                            <span class="material-symbols-rounded">chevron_left</span>
+                            <div class="date">February 2026</div>
+                            <span class="material-symbols-rounded">chevron_right</span>
+                        </div>
+                        <div class="weekdays">
+                            <div>SUN</div>
+                            <div>MON</div>
+                            <div>TUE</div>
+                            <div>WED</div>
+                            <div>THURS</div>
+                            <div>FRI</div>
+                            <div>SAT</div>
+                        </div>
+                        <div class="days">
+                            <!--Days will go here-->
+                        </div>
+                        <div class="goto-today">
+                            <div class="goto">
+                                <input type="text" placeholder="mm/yyyy" class="date-input">
+                                <button class="goto-btn">GO</button>
+                            </div>
+                            <button class="today-btn">TODAY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Laundry Basket Section -->
+        <div id="basket" class="content-section" style="display: none;">
+            <div class="box laundry-section">
+                <h2>Laundry Basket</h2>
+                <div class="basket-layout">
+                    <aside class="search-bar">
+                        <input type="text" placeholder="Search laundry history...">
+                    </aside>
+                    <div class="current-laundry">
+                        <h3>Current Laundry</h3>
+                        <ul>
+                            <li>Washing - Placeholder Item</li>
+                            <li>Ironing - Placeholder Item</li>
+                            <li>Dry Cleaning - Placeholder Item</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="laundry-history">
+                    <h3>Laundry History</h3>
+                    <ul>
+                        <li onclick="openHistoryPopup()">History Item #001</li>
+                        <li onclick="openHistoryPopup()">History Item #002</li>
+                        <li onclick="openHistoryPopup()">History Item #003</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Services Section -->
+        <div id="services" class="content-section" style="display: none;">
+            <div class="box service-section">
+                <h2>Services</h2>
+                <div class="service-list">
+                    <div class="service" onclick="openServicePopup('Laundry')">
+                        <img src="Laundry.jpg" alt="Laundry Pic">
+                        <h3>Laundry</h3>
+                        <p>Basic washing service.</p>
+                    </div>
+                    <div class="service" onclick="openServicePopup('Dry Cleaning')">
+                        <img src="Dry Cleaning.jpg" alt="Dry Cleaning Pic">
+                        <h3>Dry Cleaning</h3>
+                        <p>Gentle cleaning for delicate fabrics.</p>
+                    </div>
+                    <div class="service" onclick="openServicePopup('Iron/Press')">
+                        <img src="Iron_Press.jpg" alt="Iron Pic">
+                        <h3>Iron/Press</h3>
+                        <p>Professional pressing for neat clothes.</p>
+                    </div>
+                    <div class="service" onclick="openServicePopup('Special Fabric Cleaning')">
+                        <img src="Special_Fabric_Cleaning.jpg" alt="Fabric Pic">
+                        <h3>Special Fabric Cleaning</h3>
+                        <p>Special care for unique fabrics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Billings Section -->
+        <div id="billings" class="content-section" style="display: none;">
+            <div class="box billings">
+                <h2>Billings</h2>
+                <!-- On Review (Online Payment) -->
+                <div class="billing-group">
+                <h3>On Review</h3>
+                <ul>
+                    <li onclick="openBillingPopup('BILL 0006')">1 | BILL 0006</li>
+                    <li onclick="openBillingPopup('BILL 0005')">2 | BILL 0005</li>
+                </ul>
+                </div>
+                <!-- Pending (Onsite Payment) -->
+                <div class="billing-group">
+                <h3>Pending</h3>
+                <ul>
+                    <li onclick="openBillingPopup('BILL 0004')">1 | BILL 0004</li>
+                </ul>
+                </div>
+                <!-- Billing History -->
+                <div class="billing-group">
+                <h3>Billing History</h3>
+                    <ul>
+                        <li onclick="openBillingPopup('BILL 0003')">1 | BILL 0003</li>
+                        <li onclick="openBillingPopup('BILL 0002')">2 | BILL 0002</li>
+                        <li onclick="openBillingPopup('BILL 0001')">3 | BILL 0001</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Loyalty Rewards Section -->
+        <div id="reward" class="content-section" style="display: none;">
+            <div class="box rewards">
+                <h2>Loyalty Rewards</h2>
+                <p>Your loyalty rewards go here.</p>
+            </div>
+        </div>
+        <!-- Settings Section -->
+        <div id="setting" class="content-section" style="display: none;">
+            <div class="box settings">
+                <h2>Settings</h2>
+                <p>Your settings go here.</p>
+            </div>
+        </div>
+    </div>
+    <!--Laundry History Popup--> 
+    <div id="history-popup" class="popup hidden">
+        <div class="popup-content">
+            <h3>Laundry History Details</h3>
+            <p>Service Used: Placeholder</p>
+            <p>Clothes: Placeholder</p>
+            <p>Payment: Placeholder</p>
+            <p>ID Number: Placeholder</p>
+            <p>Payment Method: Placeholder</p>
+            <p>Amount: Placeholder</p>
+            <button onclick="closeHistoryPopup()">Close</button>
+        </div>
+    </div>
+    <!-- Service Popup -->
+    <div id="service-popup" class="popup hidden">
+        <div class="popup-content service-popup-content">
+            <h3>Services</h3>
+            <!-- Active services list -->
+            <div class="active-services" id="active-services">
+            <!-- Services will be added dynamically -->
+            </div>
+            <!-- Add Service button -->
+            <button class="add-service-btn" onclick="openAddServicePopup()">+ Add Service</button>
+            <!-- Next button goes to Clothes Popup -->
+            <button class="next-btn" onclick="goToClothesPopup()">Next</button>
+        </div>
+    </div>
+    <!-- Add Service Popup -->
+    <div id="add-service-popup" class="popup hidden">
+        <div class="popup-content add-service-content">
+            <h3>Select a Service</h3>
+            <div class="service-options">
+                <div class="service-option" onclick="confirmServiceSelection('Laundry')">Laundry</div>
+                <div class="service-option" onclick="confirmServiceSelection('Iron/Press')">Iron/Press</div>
+                <div class="service-option" onclick="confirmServiceSelection('Special Fabric Cleaning')">Special Fabric Cleaning</div>
+                <div class="service-option" onclick="confirmServiceSelection('Dry Cleaning')">Dry Cleaning</div>
+                </div>
+                <div class="popup-actions">
+                <button onclick="closeAddServicePopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- Clothes Popup -->
+    <div id="clothes-popup" class="popup hidden">
+        <div class="popup-content clothes-popup-content">
+            <h3>Your Laundry Basket</h3>
+            <!-- Add Clothes button -->
+            <button class="add-clothes-btn" onclick="openClothesSelectionPopup()">+ Add Clothes</button>
+            <!-- Selected clothes list -->
+                <div class="clothes-list" id="clothes-list">
+                <!-- Clothing + fabric items will be added here -->
+                </div>
+            <!-- Detergent choice -->
+            <h4>Detergent</h4>
+            <select id="detergent-choice">
+                <option>Placeholder Detergent A</option>
+                <option>Placeholder Detergent B</option>
+                <option>Bring Own Detergent</option>
+            </select>
+            <!-- Special Instructions -->
+            <h4>Special Instructions</h4>
+            <textarea id="special-instructions" placeholder="Leave instructions here..."></textarea>
+            <!-- Price summary -->
+            <p id="total-price">Total Price: ₱ Placeholder</p>
+            <!-- Next button goes to Transaction Popup -->
+            <button class="next-btn" onclick="goToSchedulePopup()">Next</button>
+            <button class="back-btn" onclick="backToServicePopup()">Back</button>
+        </div>
+    </div>
+    <!-- Add Clothes Popup -->
+    <div id="clothes-selection-popup" class="popup hidden">
+        <div class="popup-content clothes-selection-content">
+            <h3>Add Clothing Item</h3>
+            <!-- Clothing type -->
+            <label for="clothing-type">Clothing:</label>
+                <select id="clothing-type">
+                <option value="Shirt">Shirt</option>
+                <option value="Blouse">Blouse</option>
+                <option value="Pants">Pants</option>
+                <option value="Sweater">Sweater</option>
+                <option value="Dress">Dress</option>
+                <option value="Shorts">Shorts</option>
+            </select>
+            <!-- Fabric type -->
+            <label for="fabric-type">Fabric:</label>
+            <select id="fabric-type">
+                <option value="Cotton">Cotton</option>
+                <option value="Silk">Silk</option>
+                <option value="Denim">Denim</option>
+                <option value="Polyester">Polyester</option>
+                <option value="Regular Fabric">Regular Fabric</option>
+            </select>
+            <!-- Action buttons -->
+            <div class="popup-actions">
+                <button onclick="confirmClothesSelection()">Add</button>
+                <button onclick="closeClothesSelectionPopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- Schedule & Delivery Popup -->
+    <div id="schedule-delivery-popup" class="popup hidden">
+        <div class="popup-content schedule-popup-content">
+            <h3>Select Schedule</h3>
+            <!-- Schedule options -->
+             <div class="schedule-options">
+                <button onclick="selectSchedule('9:00 AM')">9:00 AM</button>
+                <button onclick="selectSchedule('11:30 AM')">11:30 AM</button>
+                <button onclick="selectSchedule('2:00 PM')">2:00 PM</button>
+                <button onclick="selectSchedule('4:30 PM')">4:30 PM</button>
+                <button onclick="selectSchedule('7:00 PM')">7:00 PM</button>
+             </div>
+             <!--Info Text-->
+             <h2 class="schedule-note">
+                <span class="material-symbols-rounded">info</span>
+                Machine will be assigned by staff when you arrive at the laundry shop.
+             </h2>
+             <!--Delivery Method-->
+             <h3>Select Delivery Method</h3>
+             <div class="delivery-options">
+                <button onclick="selectDelivery('Drop Off')">Drop Off</button>
+                <button onclick="selectDelivery('Pick Up')">Pick Up</button>
+             </div>
+             <button class="next-btn" onclick="goToTransaction()">Next</button>
+             <button class="back-btn" onclick="backToClothesPopup()">Back</button>
+        </div>
+    </div>
+    <!-- Transaction Popup -->
+    <div id="transaction-popup" class="popup hidden">
+        <div class="popup-content transaction-popup-content">
+            <h3>Transaction Summary</h3>
+            <!-- Summary of services, clothes, detergent, instructions -->
+            <div id="transaction-summary">
+            <!-- Filled dynamically -->
+            </div>
+            <!-- Placeholder total -->
+            <p id="transaction-total">Total Price: ₱ Placeholder</p>
+            <!-- Transaction type selection -->
+            <h4>Transaction Type</h4>
+            <div class="transaction-type">
+                <label>
+                    <input type="radio" name="transaction-type" value="Online" checked onchange="toggleTransactionType()">
+                    Online
+                </label>
+                <label>
+                    <input type="radio" name="transaction-type" value="Onsite" onchange="toggleTransactionType()">
+                    Onsite
+            </label>
+            </div>
+            <!-- Online payment section -->
+            <div id="online-payment-section">
+                <h4>GCash Payment</h4>
+                <p>Scan the QR code below to pay:</p>
+                <div class="qr-code">
+                    <!-- Replace with actual QR image -->
+                    <img src="qr_temporary.png" alt="GCash QR Code" width="200">
+                </div>
+                <label for="payment-screenshot">Upload Screenshot Proof:</label>
+                <input type="file" id="payment-screenshot" accept="image/*">
+            </div>
+            <!-- Confirm / Cancel -->
+            <div class="popup-actions">
+                <button class="back-btn" onclick="backToSchedulePopup()">Back</button>
+                <button class="confirm-btn" onclick="confirmTransaction()">Confirm</button>
+                <button class="cancel-btn" onclick="closeTransactionPopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- Bill Details Popup -->
+    <div id="bill-popup" class="popup hidden">
+        <div class="popup-content bill-popup-content">
+            <h3 id="bill-title">Bill Details</h3>
+            <div id="bill-details">
+                <!-- Filled dynamically -->
+            </div>
+            <div class="popup-actions">
+                <button class="cancel-btn" onclick="closeBillPopup()">Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Popup -->
+    <div id="edit-popup" class="popup hidden">
+        <div class="popup-content edit-popup-content">
+            <h3 id="popupTitle">Edit Field</h3>
+            <div id="popupBody"></div>
+            <div class="edit-popup-actions">
+                <button id="saveEdit">Save</button>
+                <button id="cancelEdit">Cancel</button>
+            </div>
+        </div>
+    </div>
+        <!--Dashboard Content End-->
+    <script src="dashboard.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>
